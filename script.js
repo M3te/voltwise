@@ -2,7 +2,8 @@
 var PRODUCT = {
   id: 'vw-sem-v1',
   name: 'VoltWise Smart Energy Meter',
-  price: 999,
+  price: 699,
+  oldPrice: 999,
   color: 'Pearl White',
   image: 'imgs/Mian.png',
   images: [
@@ -242,7 +243,9 @@ function renderCart() {
 
   var subtotal = cartTotal();
   var shipping = subtotal >= 999 ? 0 : 50;
-  var total = subtotal + shipping;
+  var fastChk = document.getElementById('fastDelivChk');
+  var fastFee = (fastChk && fastChk.checked) ? 30 : 0;
+  var total = subtotal + shipping + fastFee;
 
   var freeNote = subtotal < 999
     ? '<div class="free-ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Free shipping included with your order!</div>'
@@ -251,6 +254,7 @@ function renderCart() {
   sum.innerHTML = freeNote + [
     '<div class="sum-row"><span>Subtotal</span><span>' + subtotal + ' SAR</span></div>',
     '<div class="sum-row"><span>Shipping</span><span style="color:' + (shipping===0?'var(--success)':'inherit') + '">' + (shipping===0?'FREE':shipping+' SAR') + '</span></div>',
+    (fastFee ? '<div class="sum-row"><span>Fast Delivery</span><span>+30 SAR</span></div>' : ''),
     '<div class="sum-row total"><span>Total</span><span>' + total + ' SAR</span></div>'
   ].join('');
 
@@ -267,10 +271,22 @@ document.getElementById('backToCart').addEventListener('click', function() {
 
 function getShipping() {
   var del = document.querySelector('input[name="delivery"]:checked');
-  if (del && del.value === 'express') return 50;
+  if (del && del.value === 'express') return 30;
   if (del && del.value === 'sameday') return 99;
+  var fastChk = document.getElementById('fastDelivChk');
+  if (fastChk && fastChk.checked) return 30;
   return 0;
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  var chk = document.getElementById('fastDelivChk');
+  if (chk) chk.addEventListener('change', function(){
+    renderCart();
+    var exp = document.querySelector('input[name="delivery"][value="express"]');
+    if (exp && chk.checked) exp.checked = true;
+    if (typeof renderCheckoutSummary === 'function') renderCheckoutSummary();
+  });
+});
 
 function renderCheckoutSummary() {
   var itemsEl  = document.getElementById('coItems');

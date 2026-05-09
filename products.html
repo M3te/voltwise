@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltWise — All Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="index.html">
+      <img src="imgs/Logo.png" alt="VoltWise Logo" class="hdr-logo-img">
+    </a>
+    <nav class="hdr-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="on">Products</a>
+    </nav>
+    <a class="cart-btn" href="products.html" aria-label="View cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-btn-label">Cart</span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap section">
+  <div class="section-head">
+    <h1 class="section-title">Explore <em>Our Products</em></h1>
+    <p class="section-sub">Discover our range of smart, sustainable, and premium energy solutions designed for the modern world.</p>
+    <div style="margin-top:32px"><span class="pill-filter">All Products</span></div>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- Card 1 -->
+    <article class="product-card">
+      <a href="product.html" class="pc-media-link">
+      <div class="pc-media">
+        <span class="pc-tag">Smart Home</span>
+        <img src="imgs/Mian.png" alt="VoltWise Smart Energy Meter">
+      </div>
+      </a>
+      <div class="pc-body">
+        <h3 class="pc-name"><a href="product.html" style="color:inherit">VoltWise Smart Energy Meter</a></h3>
+        <p class="pc-desc">Real-time energy tracking with unparalleled precision. Designed for residential efficiency.</p>
+        <div class="pc-feats">
+          <div class="pc-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Real-time tracking
+          </div>
+          <div class="pc-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            Wi-Fi enabled
+          </div>
+        </div>
+        <div class="pc-foot">
+          <span class="pc-price">SAR 699 <span style="text-decoration:line-through;color:var(--ink-faint);font-size:.85rem;font-weight:400;margin-left:6px">999</span></span>
+          <a class="btn-pc-add" href="product.html">View Product</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="product-card coming-soon">
+      <div class="pc-media pc-media-soon">
+        <span class="pc-tag">Pro Series</span>
+        <div class="soon-badge">Coming Soon</div>
+        <svg class="soon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="pc-body">
+        <h3 class="pc-name">VoltWise Core Hub</h3>
+        <p class="pc-desc">Details coming soon. Stay tuned for our next-generation AI hub.</p>
+        <div class="pc-foot">
+          <span class="pc-price pc-price-soon">— —</span>
+          <button class="btn-pc-add disabled" type="button" disabled>Notify Me</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="product-card coming-soon">
+      <div class="pc-media pc-media-soon">
+        <span class="pc-tag">Premium</span>
+        <div class="soon-badge">Coming Soon</div>
+        <svg class="soon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="pc-body">
+        <h3 class="pc-name">VoltWise Sense Pro</h3>
+        <p class="pc-desc">Details coming soon. Premium sensor array launching in our next release.</p>
+        <div class="pc-foot">
+          <span class="pc-price pc-price-soon">— —</span>
+          <button class="btn-pc-add disabled" type="button" disabled>Notify Me</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-inner">
+    <div class="foot-logo">
+      <img src="imgs/Logo.png" alt="VoltWise Logo" class="foot-logo-img">
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="foot-copy">© 2026 VoltWise Systems. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
