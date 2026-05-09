@@ -8,7 +8,10 @@
       "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")",
       "Bash(pip install *)",
       "Bash(python *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git add *)"
     ]
   }
 }
