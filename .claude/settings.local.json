@@ -15,7 +15,12 @@
       "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"update local settings\")",
       "PowerShell(Set-Content *)",
       "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"Move site to repo root for GitHub Pages\")",
-      "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"Add voltwise/index.html backup copy\")"
+      "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"Add voltwise/index.html backup copy\")",
+      "Bash(git rm *)",
+      "Bash(rmdir voltwise *)",
+      "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"Remove duplicate voltwise/index.html\")",
+      "Bash(xxd)",
+      "Bash(git -c user.email=\"asomy1630@gmail.com\" -c user.name=\"Rawabi\" commit -m \"Remove Title\")"
     ]
   }
 }
