@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIS343 Project — VoltWise Smart Energy Meter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="#">
+      <img src="../imgs/Logo.png" alt="VoltWise Logo" class="hdr-logo-img">
+    </a>
+    <span class="hdr-title"></span>
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-btn-label" id="cartLabel">Cart</span>
+      <span class="cart-count hidden" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN PRODUCT SECTION -->
+<main class="wrap">
+  <div class="product-grid">
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="gallery-main" id="mainImg">
+        <img id="mainPhoto"
+          src="../imgs/Mian.png"
+          alt="VoltWise Smart Energy Meter">
+      </div>
+      <div class="gallery-thumbs" id="thumbs"></div>
+    </div>
+
+    <!-- INFO -->
+    <div class="info">
+      <p class="info-cat">Smart Home · Energy Management</p>
+      <h1 class="info-name">VoltWise Smart<br><em>Energy</em> Meter</h1>
+
+      <div class="info-rating">
+        <span class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </span>
+        <span>4.8 <span style="color:var(--gray-400)">(26 reviews)</span></span>
+        <span class="badge-pill badge-premium">Smart Home</span>
+      </div>
+
+      <div class="price-row">
+        <span class="price">999</span>
+        <span class="price-sar">SAR</span>
+      </div>
+      <div class="price-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free shipping + professional installation included
+      </div>
+
+      <p class="short-desc">
+        A compact smart device installed alongside your home electricity meter. Tracks energy
+        consumption in real time, connects to a mobile app, and alerts you when usage spikes —
+        so you always know which appliances are costing you the most.
+      </p>
+
+      <!-- COLOR CHOICES -->
+      <div class="variant-section">
+        <div class="variant-label">Color: <strong id="colorName">Pearl White</strong></div>
+        <div class="color-options" id="colorOptions">
+          <button class="color-swatch active" data-color="Pearl White" data-img="../imgs/Mian.png" style="background:#f0f0f0;" title="Pearl White">
+            <span class="swatch-check">✓</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="key-feats">
+        <div class="kf">
+          <div class="kf-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span><strong>Real-time monitoring</strong> — live electricity usage in the app</span>
+        </div>
+        <div class="kf">
+          <div class="kf-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="1" x2="6" y2="4" stroke-linecap="round"/><line x1="10" y1="1" x2="10" y2="4" stroke-linecap="round"/><line x1="14" y1="1" x2="14" y2="4" stroke-linecap="round"/></svg>
+          </div>
+          <span><strong>Appliance detection</strong> — identifies which device consumes most</span>
+        </div>
+        <div class="kf">
+          <div class="kf-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span><strong>Smart alerts</strong> — notified when consumption exceeds your limit</span>
+        </div>
+        <div class="kf">
+          <div class="kf-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke-linecap="round"/></svg>
+          </div>
+          <span><strong>AI recommendations</strong> — personalized tips to cut your bill</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="qty-stepper">
+          <button class="qty-b" id="qtyMinus">−</button>
+          <input class="qty-n" type="number" id="qtyInput" value="1" min="1" max="99">
+          <button class="qty-b" id="qtyPlus">+</button>
+        </div>
+        <button class="btn-add" id="addBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="trust-mini">
+        <div class="tm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          SSL-secured checkout
+        </div>
+        <div class="tm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          1-year manufacturer warranty
+        </div>
+        <div class="tm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+          14-day hassle-free returns
+        </div>
+        <div class="tm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Free delivery + home installation
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- PAYMENT STRIP -->
+<div class="pay-strip">
+  <div class="pay-inner">
+    <span class="pay-label">We Accept</span>
+    <span class="pay-badge p-mada">Mada</span>
+    <span class="pay-badge p-apple">Apple Pay</span>
+    <span class="pay-badge p-tamara">Tamara</span>
+    <span class="pay-badge p-tabby">Tabby</span>
+    <span class="pay-badge p-cod">COD</span>
+  </div>
+</div>
+
+<!-- TABS SECTION -->
+<div class="wrap">
+  <div class="tabs-section">
+    <div class="tab-bar">
+      <button class="tab on" data-tab="desc">Description</button>
+      <button class="tab" data-tab="specs">Specifications</button>
+      <button class="tab" data-tab="reviews">Reviews (26)</button>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="tab-panel on" id="tab-desc">
+      <div class="desc-body">
+        <div class="desc-img">
+          <img src="../imgs/Main 4.png" alt="Smart energy monitoring app" loading="lazy">
+        </div>
+        <div class="desc-text">
+          <h2>Monitor. Alert.<br><em>Save More.</em></h2>
+          <p>Many households face high electricity bills without knowing the exact reason or which devices consume the most energy. VoltWise solves this by installing a compact smart meter alongside your home electricity meter — no complex setup, no rewiring.</p>
+          <p>The device connects to a mobile application that shows your real-time usage, breaks down consumption by appliance, and sends instant alerts the moment you exceed a set threshold. You finally know what is costing you money.</p>
+          <p>After analyzing your usage, VoltWise suggests practical improvements — from reducing AC runtime and upgrading to an inverter, to switching to LED lighting or installing motion sensors. Small changes, big savings.</p>
+          <div class="desc-feats">
+            <div class="df">
+              <div class="df-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="df-body">
+                <strong>Real-Time Monitoring</strong>
+                <span>Live energy data on your phone, updated every second. No waiting until end of month.</span>
+              </div>
+            </div>
+            <div class="df">
+              <div class="df-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke-linecap="round"/></svg>
+              </div>
+              <div class="df-body">
+                <strong>AI-Powered Tips</strong>
+                <span>Smart recommendations tailored to your actual usage patterns and home appliances.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECS -->
+    <div class="tab-panel" id="tab-specs">
+      <div class="specs-grid">
+        <dl class="spec-card"><dt>Monitoring Type</dt><dd>Real-Time (Live)</dd></dl>
+        <dl class="spec-card"><dt>Connectivity</dt><dd>Wi-Fi 2.4 GHz + Bluetooth 5.0</dd></dl>
+        <dl class="spec-card"><dt>App Compatibility</dt><dd>iOS 14+ · Android 10+</dd></dl>
+        <dl class="spec-card"><dt>Voltage Support</dt><dd>220V / Type G (Saudi Standard)</dd></dl>
+        <dl class="spec-card"><dt>Measurement Accuracy</dt><dd>±1% (Class 1 precision)</dd></dl>
+        <dl class="spec-card"><dt>Alert System</dt><dd>Push Notifications + SMS</dd></dl>
+        <dl class="spec-card"><dt>Data Storage</dt><dd>Cloud (encrypted) · 24-month history</dd></dl>
+        <dl class="spec-card"><dt>Installation</dt><dd>Professional — included in price</dd></dl>
+        <dl class="spec-card"><dt>Device Dimensions</dt><dd>120 × 80 × 35 mm</dd></dl>
+        <dl class="spec-card"><dt>Weight</dt><dd>185 g</dd></dl>
+        <dl class="spec-card"><dt>Certifications</dt><dd>SASO · CE · Safety Quality Certified</dd></dl>
+        <dl class="spec-card"><dt>Warranty</dt><dd>1 Year (VoltWise)</dd></dl>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="tab-panel" id="tab-reviews">
+      <div class="reviews-summary">
+        <div class="rs-score">
+          <div class="rs-num">4.8</div>
+          <div class="stars" style="justify-content:center;margin:6px 0">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div class="rs-total">26 reviews</div>
+        </div>
+        <div class="rs-bars">
+          <div class="bar-row">5★<div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>20</div>
+          <div class="bar-row">4★<div class="bar-track"><div class="bar-fill" style="width:19%"></div></div>5</div>
+          <div class="bar-row">3★<div class="bar-track"><div class="bar-fill" style="width:4%"></div></div>1</div>
+          <div class="bar-row">2★<div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>0</div>
+          <div class="bar-row">1★<div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>0</div>
+        </div>
+      </div>
+      <div class="rev-list">
+        <div class="rev-card">
+          <div class="rev-hdr">
+            <div class="rev-av">FA</div>
+            <div class="rev-meta">
+              <strong>Faisal Al-Rashidi</strong>
+              <span>Riyadh · Verified Purchase · Pearl White</span>
+            </div>
+            <div class="stars" style="margin-left:auto">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+          <p class="rev-text">My electricity bill dropped by 280 SAR the first month after installation. The app clearly shows that our old AC unit was responsible for 60% of our consumption. The installation team was professional and finished in under 30 minutes. Highly recommend to every household in Saudi Arabia.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rev-hdr">
+            <div class="rev-av" style="background:linear-gradient(135deg,var(--accent),var(--navy))">NA</div>
+            <div class="rev-meta">
+              <strong>Noura Al-Anazi</strong>
+              <span>Jeddah · Verified Purchase · Graphite</span>
+            </div>
+            <div class="stars" style="margin-left:auto">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+          <p class="rev-text">As a family of 7, we always struggled with our electricity bill every summer. This device showed us that 3 of our old split ACs were running 22 hours a day! The VoltWise app sent us an alert and recommended upgrading to inverter ACs. We saved over 400 SAR last month alone.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rev-hdr">
+            <div class="rev-av" style="background:linear-gradient(135deg,#0097a7,var(--navy))">KO</div>
+            <div class="rev-meta">
+              <strong>Khalid Al-Otaibi</strong>
+              <span>Dammam · Verified Purchase · Midnight Black</span>
+            </div>
+            <div class="stars" style="margin-left:auto">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+          <p class="rev-text">Great product and concept. The app is very clean and easy to use. My only feedback is I wish the history went back more than 24 months. Otherwise the installation was fast, the real-time data is accurate when I compared it to the SEC meter, and the alerts work perfectly. 4 stars from me.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BRAND STATEMENT -->
+<section class="brand-statement">
+  <div class="bs-inner">
+    <p class="bs-eyebrow">VoltWise</p>
+    <h2 class="bs-line">Save energy.<br><em>Save money.</em><br>Live smarter.</h2>
+    <p class="bs-sub">A smarter home starts with knowing where your energy actually goes.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-inner">
+    <div class="foot-logo">
+      <img src="../imgs/Logo.png" alt="VoltWise Logo" class="foot-logo-img">
+    </div>
+    <div class="foot-links">
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="foot-copy">© 2026 VoltWise (MIS343). All rights reserved.</div>
+  </div>
+</footer>
+
+
+<!-- CART DRAWER -->
+<div class="drawer-overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+
+  <!-- Panel: Cart -->
+  <div id="panelCart" style="display:flex;flex-direction:column;height:100%">
+    <div class="drawer-hdr">
+      <h2>Your Cart</h2>
+      <button class="close-btn" id="closeDrawer" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="cartItems">
+      <div class="empty-cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <p>Your cart is empty.<br>Add the Smart Energy Meter above.</p>
+      </div>
+    </div>
+    <div class="drawer-foot" id="cartFoot" style="display:none">
+      <div class="summary-rows" id="cartSummary"></div>
+      <button class="btn-checkout" id="toCheckout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Proceed to Checkout
+      </button>
+      <a href="#" class="back-shop" id="continueShopping">← Continue shopping</a>
+    </div>
+  </div>
+
+  <!-- Panel: Checkout -->
+  <div id="panelCheckout">
+    <div class="co-hdr">
+      <button class="back-btn" id="backToCart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        Back to cart
+      </button>
+      <h2>Checkout</h2>
+      <button class="close-btn" id="closeCheckout" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="co-body" id="checkoutBody">
+      <div class="progress">
+        <div class="pdot on" id="pd1"></div>
+        <div class="pdot" id="pd2"></div>
+        <div class="pdot" id="pd3"></div>
+      </div>
+
+      <div class="co-order-mini">
+        <h4>Order Summary</h4>
+        <div id="coItems"></div>
+        <hr style="border:none;border-top:1px solid var(--gray-200);margin:10px 0">
+        <div class="co-totals" id="coTotals"></div>
+      </div>
+
+      <form id="checkoutForm" novalidate>
+
+        <div class="co-section">Contact</div>
+        <div class="row2">
+          <div class="fg">
+            <label class="fl" for="f_first">First Name *</label>
+            <input class="fi" type="text" id="f_first" placeholder="Mohammed" required>
+            <div class="ferr" id="e_first">Required</div>
+          </div>
+          <div class="fg">
+            <label class="fl" for="f_last">Last Name *</label>
+            <input class="fi" type="text" id="f_last" placeholder="Al-Harbi" required>
+            <div class="ferr" id="e_last">Required</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label class="fl" for="f_email">Email Address *</label>
+          <input class="fi" type="email" id="f_email" placeholder="you@example.com" required>
+          <div class="ferr" id="e_email">Enter a valid email</div>
+        </div>
+        <div class="fg">
+          <label class="fl" for="f_phone">Phone *</label>
+          <div style="display:flex;gap:8px">
+            <div style="background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:var(--r-md);padding:10px 12px;font-size:.85rem;color:var(--gray-600);white-space:nowrap;display:flex;align-items:center">+966</div>
+            <input class="fi" type="tel" id="f_phone" placeholder="5xxxxxxxx" required style="flex:1">
+          </div>
+          <div class="ferr" id="e_phone">Required</div>
+        </div>
+
+        <div class="co-section">Shipping Address</div>
+        <div class="fg">
+          <label class="fl" for="f_address">Address *</label>
+          <input class="fi" type="text" id="f_address" placeholder="Street, building number" required>
+          <div class="ferr" id="e_address">Required</div>
+        </div>
+        <div class="row2">
+          <div class="fg">
+            <label class="fl" for="f_city">City *</label>
+            <input class="fi" type="text" id="f_city" placeholder="Riyadh" required>
+            <div class="ferr" id="e_city">Required</div>
+          </div>
+          <div class="fg">
+            <label class="fl" for="f_region">Region *</label>
+            <select class="fs" id="f_region" required>
+              <option value="">Select...</option>
+              <option>Riyadh</option><option>Makkah</option><option>Madinah</option>
+              <option>Eastern Province</option><option>Asir</option><option>Tabuk</option>
+              <option>Qassim</option><option>Hail</option><option>Jizan</option>
+              <option>Najran</option><option>Al Bahah</option><option>Al Jawf</option>
+              <option>Northern Borders</option>
+            </select>
+            <div class="ferr" id="e_region">Required</div>
+          </div>
+        </div>
+
+        <div class="co-section">Delivery Method</div>
+        <label class="opt-card">
+          <input type="radio" name="delivery" value="standard" checked>
+          <div class="opt-lbl"><strong>Standard · 3–5 days</strong><span>SMSA / Aramex / SPL</span></div>
+          <span class="opt-price" id="stdPrice">FREE</span>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="delivery" value="express">
+          <div class="opt-lbl"><strong>Express · 1–2 days</strong><span>Priority handling</span></div>
+          <span class="opt-price">50 SAR</span>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="delivery" value="sameday">
+          <div class="opt-lbl"><strong>Same-Day</strong><span>Selected cities only</span></div>
+          <span class="opt-price">99 SAR</span>
+        </label>
+
+        <div class="co-section">Payment Method</div>
+        <label class="opt-card">
+          <input type="radio" name="payment" value="mada" checked>
+          <span class="pay-icon" style="background:#00a490">Mada</span>
+          <div class="opt-lbl"><strong>Mada</strong><span>Saudi debit card</span></div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="payment" value="applepay">
+          <span class="pay-icon" style="background:#1c1c1e">Pay</span>
+          <div class="opt-lbl"><strong>Apple Pay</strong><span>Face ID checkout</span></div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="payment" value="tamara">
+          <span class="pay-icon" style="background:#2a6b4f">TAM</span>
+          <div class="opt-lbl"><strong>Tamara</strong><span>Buy now, pay in 3 installments</span></div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="payment" value="tabby">
+          <span class="pay-icon" style="background:#3d3d3d">TAB</span>
+          <div class="opt-lbl"><strong>Tabby</strong><span>Pay in 4 interest-free payments</span></div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="payment" value="cod">
+          <span class="pay-icon" style="background:var(--success)">COD</span>
+          <div class="opt-lbl"><strong>Cash on Delivery</strong><span>Pay when it arrives</span></div>
+        </label>
+
+      </form>
+    </div>
+    <div class="co-foot">
+      <button class="btn-place" id="placeOrderBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Place Order
+      </button>
+      <div class="secure-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Secured by SSL · All data encrypted
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel: Confirmation -->
+  <div id="panelConfirm">
+    <div class="confirm-body" id="confirmBody"></div>
+    <div class="conf-foot">
+      <button class="btn-again" id="shopAgainBtn">Shop Again</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
