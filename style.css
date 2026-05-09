@@ -1230,6 +1230,123 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────
+   RESPONSIVE TUNING — Homepage / Products / Hero
+   ───────────────────────────────────────────── */
+
+/* Tablet (≤960px) — homepage sections */
+@media(max-width:960px) {
+  .hero { padding: 48px 0 64px; }
+  .hero-grid { gap: 48px; }
+  .section { padding: 64px 0; }
+  .section-head { margin-bottom: 48px; }
+  .features-grid { gap: 32px; }
+  .solutions-grid { gap: 18px; }
+  .sol-main { min-height: 360px; padding: 24px; }
+  .contact-grid { gap: 40px; }
+  .contact-form { padding: 28px; }
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Small tablet / large phone (≤720px) */
+@media(max-width:720px) {
+  .hdr-nav { gap: 20px; }
+  .hdr-nav a { font-size: .85rem; }
+
+  .hero { padding: 32px 0 48px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-visual { aspect-ratio: 4/3; padding: 28px; order: -1; }
+  .hero-text { font-size: .98rem; }
+
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 36px; }
+  .features-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  .solutions-grid { grid-template-columns: 1fr; gap: 18px; }
+  .sol-main { min-height: 320px; padding: 20px; }
+  .sol-card-overlay { max-width: 100%; padding: 18px 20px; }
+  .sol-side { gap: 18px; }
+  .sol-card { padding: 22px 20px; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact-form { padding: 24px; border-radius: var(--r-xl); }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 64px;
+  }
+  .pc-media { padding: 28px; }
+  .pc-body { padding: 20px 22px 22px; }
+}
+
+/* Phone (≤480px) */
+@media(max-width:480px) {
+  .hdr-nav { gap: 14px; }
+  .hdr-nav a { font-size: .8rem; padding: 4px 0; }
+
+  .hero { padding: 24px 0 36px; }
+  .hero-eyebrow { font-size: .62rem; padding: 5px 12px; margin-bottom: 18px; }
+  .hero-title { margin-bottom: 16px; }
+  .hero-text { font-size: .92rem; margin-bottom: 22px; }
+  .hero-visual { aspect-ratio: 1; padding: 24px; border-radius: var(--r-xl); }
+  .hero-visual-brand .brand-mark { max-width: 65%; }
+
+  .btn-primary { padding: 14px 22px; font-size: .85rem; width: 100%; justify-content: center; }
+
+  .section { padding: 44px 0; }
+  .section-head { margin-bottom: 28px; }
+  .section-title { font-size: 1.7rem; }
+  .section-sub { font-size: .92rem; }
+  .solutions-head { font-size: 1.6rem; margin-bottom: 22px; }
+
+  .feat-icon { width: 40px; height: 40px; margin-bottom: 14px; }
+  .feat-text { font-size: .9rem; }
+
+  .sol-main { min-height: 280px; border-radius: var(--r-xl); }
+  .sol-card-overlay h4 { font-size: 1.15rem; }
+  .sol-card { border-radius: var(--r-lg); padding: 20px 18px; }
+
+  .contact-form { padding: 20px; }
+
+  .products-grid { gap: 16px; padding-bottom: 48px; }
+  .pc-media { padding: 22px; aspect-ratio: 1.05; }
+  .pc-body { padding: 18px 18px 20px; }
+  .pc-name { font-size: 1.1rem; }
+  .pc-desc { font-size: .85rem; margin-bottom: 14px; }
+  .pc-feats { gap: 6px; padding-bottom: 14px; margin-bottom: 14px; }
+  .pc-feat { font-size: .8rem; }
+  .btn-pc-add { padding: 9px 14px; font-size: .78rem; }
+  .pc-price { font-size: 1.1rem; }
+  .pill-filter { padding: 9px 22px; font-size: .8rem; margin-bottom: 36px; }
+
+  .soon-badge { top: 14px; right: 14px; font-size: .6rem; padding: 5px 10px; }
+  .pc-media-soon .soon-icon { width: 44px; height: 44px; }
+
+  /* Fast delivery card on small screens */
+  .fast-deliv { padding: 12px 14px; gap: 10px; }
+  .fd-icon { width: 32px; height: 32px; }
+  .fd-body strong { font-size: .92rem; }
+  .fd-body span { font-size: .76rem; }
+  .fd-price { font-size: .9rem; }
+
+  /* Discount badges */
+  .price-old { font-size: .9rem; }
+  .price-discount { font-size: .65rem; padding: 3px 8px; }
+}
+
+/* Very narrow (≤360px) */
+@media(max-width:360px) {
+  .hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.5rem; }
+  .solutions-head { font-size: 1.4rem; }
+  .pc-foot { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .btn-pc-add { width: 100%; text-align: center; }
+}
+
+/* ─────────────────────────────────────────────
    HOMEPAGE & PRODUCTS PAGE
    ───────────────────────────────────────────── */
 
