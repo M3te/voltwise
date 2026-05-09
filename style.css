@@ -1349,6 +1349,97 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────
+   MOBILE TYPOGRAPHY PASS
+   Match the readable, breathing text style
+   shown across hero & product description
+   ───────────────────────────────────────────── */
+@media(max-width:720px) {
+  /* Body text — looser, larger, more readable */
+  .hero-text,
+  .section-sub,
+  .feat-text,
+  .pc-desc,
+  .sol-card p,
+  .sol-card-overlay p,
+  .desc-text p,
+  .short-desc,
+  .rev-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ink-mute);
+  }
+
+  /* Spacing between stacked paragraphs */
+  .hero-text + .hero-text,
+  .desc-text p + p {
+    margin-top: 14px;
+  }
+
+  /* Headings — tighter line-height, never cramped */
+  .hero-title,
+  .section-title,
+  .solutions-head,
+  .desc-text h2,
+  .info-name,
+  .bs-line {
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+
+  /* Section heads — left-align on phone for better read */
+  .section-head {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Eyebrow / labels — keep generous spacing */
+  .hero-eyebrow,
+  .feat-label,
+  .info-cat,
+  .co-section {
+    letter-spacing: .14em;
+  }
+
+  /* Product card text breathing */
+  .pc-name { line-height: 1.25; margin-bottom: 8px; }
+  .pc-desc { margin-bottom: 16px; }
+
+  /* Solution card text */
+  .sol-card h5,
+  .sol-card-overlay h4 {
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  /* Form labels — readable */
+  .fl { font-size: .88rem; margin-bottom: 8px; }
+}
+
+@media(max-width:480px) {
+  /* Slightly smaller but still spacious on phone */
+  .hero-text,
+  .section-sub,
+  .feat-text,
+  .pc-desc,
+  .sol-card p,
+  .sol-card-overlay p,
+  .desc-text p,
+  .short-desc,
+  .rev-text {
+    font-size: .98rem;
+    line-height: 1.7;
+  }
+  .hero-text + .hero-text { margin-top: 16px; }
+
+  /* Center pill filter & CTA on standalone pages */
+  .pill-filter { display: block; margin-left: auto; margin-right: auto; width: fit-content; }
+
+  /* Section head can re-center on small phones for hero feel */
+  .section-head { text-align: center; }
+}
+
+/* ─────────────────────────────────────────────
    HOMEPAGE & PRODUCTS PAGE
    ───────────────────────────────────────────── */
 
