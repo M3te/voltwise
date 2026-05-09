@@ -1078,8 +1078,8 @@ ul { list-style: none; }
 
 /* Small tablet / large phone (≤720px) */
 @media(max-width:720px) {
-  .hdr-inner { padding: 0 20px; gap: 12px; }
-  .wrap, .pay-inner, .foot-inner { padding: 0 20px; }
+  .hdr-inner { padding: 0 26px; gap: 12px; }
+  .wrap, .pay-inner, .foot-inner { padding: 0 26px; }
   .bs-inner { padding: 0 24px; }
   .sb-inner { padding: 12px 20px; gap: 12px; }
   .hdr { height: 72px; }
@@ -1102,10 +1102,10 @@ ul { list-style: none; }
 
 /* iPhone & small phones (≤480px) */
 @media(max-width:480px) {
-  .hdr-inner { padding: 0 16px; gap: 8px; }
-  .wrap, .pay-inner, .foot-inner { padding: 0 16px; }
-  .bs-inner { padding: 0 20px; }
-  .sb-inner { padding: 10px 16px; gap: 10px; }
+  .hdr-inner { padding: 0 22px; gap: 8px; }
+  .wrap, .pay-inner, .foot-inner { padding: 0 22px; }
+  .bs-inner { padding: 0 24px; }
+  .sb-inner { padding: 10px 22px; gap: 10px; }
 
   .hdr { height: 64px; }
   .hdr-logo-img { height: 40px; max-width: 130px; }
@@ -1213,7 +1213,9 @@ ul { list-style: none; }
 
 /* iPhone SE / very narrow (≤360px) */
 @media(max-width:360px) {
-  .hdr-inner { padding: 0 12px; gap: 8px; }
+  .hdr-inner { padding: 0 18px; gap: 8px; }
+  .wrap, .pay-inner, .foot-inner { padding: 0 18px; }
+  .bs-inner { padding: 0 20px; }
   .hdr { height: 60px; }
   .hdr-logo-img { height: 36px; max-width: 110px; }
   .hdr-title { font-size: .8rem; }
