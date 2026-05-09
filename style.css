@@ -1237,9 +1237,9 @@ ul { list-style: none; }
 
 /* Tablet (≤960px) — homepage sections */
 @media(max-width:960px) {
-  .hero { padding: 48px 0 64px; }
+  .hero { padding-top: 48px; padding-bottom: 64px; }
   .hero-grid { gap: 48px; }
-  .section { padding: 64px 0; }
+  .section { padding-top: 64px; padding-bottom: 64px; }
   .section-head { margin-bottom: 48px; }
   .features-grid { gap: 32px; }
   .solutions-grid { gap: 18px; }
@@ -1257,12 +1257,12 @@ ul { list-style: none; }
   .hdr-nav { gap: 20px; }
   .hdr-nav a { font-size: .85rem; }
 
-  .hero { padding: 32px 0 48px; }
+  .hero { padding-top: 32px; padding-bottom: 48px; }
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
   .hero-visual { aspect-ratio: 4/3; padding: 28px; order: -1; }
   .hero-text { font-size: .98rem; }
 
-  .section { padding: 56px 0; }
+  .section { padding-top: 56px; padding-bottom: 56px; }
   .section-head { margin-bottom: 36px; }
   .features-grid { grid-template-columns: 1fr; gap: 24px; }
 
@@ -1289,7 +1289,7 @@ ul { list-style: none; }
   .hdr-nav { gap: 14px; }
   .hdr-nav a { font-size: .8rem; padding: 4px 0; }
 
-  .hero { padding: 24px 0 36px; }
+  .hero { padding-top: 24px; padding-bottom: 36px; }
   .hero-eyebrow { font-size: .62rem; padding: 5px 12px; margin-bottom: 18px; }
   .hero-title { margin-bottom: 16px; }
   .hero-text { font-size: .92rem; margin-bottom: 22px; }
@@ -1298,7 +1298,7 @@ ul { list-style: none; }
 
   .btn-primary { padding: 14px 22px; font-size: .85rem; width: 100%; justify-content: center; }
 
-  .section { padding: 44px 0; }
+  .section { padding-top: 44px; padding-bottom: 44px; }
   .section-head { margin-bottom: 28px; }
   .section-title { font-size: 1.7rem; }
   .section-sub { font-size: .92rem; }
@@ -1463,7 +1463,8 @@ ul { list-style: none; }
 
 /* ─── HERO ─── */
 .hero {
-  padding: 64px 0 96px;
+  padding-top: 64px;
+  padding-bottom: 96px;
   animation: fadeUp .8s var(--ease-slow) both;
 }
 .hero-grid {
@@ -1547,7 +1548,8 @@ ul { list-style: none; }
 }
 
 /* ─── SECTION HEADERS ─── */
-.section { padding: 96px 0; }
+.section { padding-top: 96px; padding-bottom: 96px; }
+.section.section-tight { padding-top: 0; }
 .section-head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
 .section-title {
   font-family: var(--font-serif);
