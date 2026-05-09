@@ -31,7 +31,9 @@
       "Bash(curl -s \"https://m3te.github.io/voltwise/imgs/Mian.png\" -o /dev/null -w \"Mian.png: %{http_code}\\\\n\")",
       "Bash(curl -s https://m3te.github.io/voltwise/product.html)",
       "Bash(curl -s -o /dev/null -w \"index: %{http_code}\\\\nstyle: %{http_code}\\\\n\" https://m3te.github.io/voltwise/ https://m3te.github.io/voltwise/style.css)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Read(//c/Users/m3te1/.claude/skills/**)",
+      "Bash(mkdir \"C:\\\\Users\\\\m3te1\\\\.claude\\\\skills\")"
     ]
   }
 }

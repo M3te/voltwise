@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -33,36 +33,106 @@
 <!-- HERO -->
 <main class="wrap hero">
   <div class="hero-grid">
-    <div>
-      <span class="hero-eyebrow">Smart + Sustainable</span>
-      <h1 class="hero-title"><em>VoltWise</em></h1>
-      <p class="hero-text">
+    <div class="hero-copy">
+      <span class="hero-eyebrow reveal">Smart + Sustainable</span>
+      <h1 class="hero-title reveal"><em>VoltWise</em></h1>
+      <p class="hero-text reveal" data-delay="120">
         Take absolute control of your electricity usage. Our advanced AI monitors,
         analyzes, and optimizes your home's power consumption in real time —
         reducing waste and lowering your environmental footprint effortlessly.
       </p>
-      <p class="hero-text">
+      <p class="hero-text reveal" data-delay="180">
         VoltWise utilizes proprietary machine learning algorithms to identify
         high-consumption appliances. By analyzing micro-patterns in your electrical
         grid, it automatically suggests optimizations that save money without
         compromising your lifestyle.
       </p>
-      <a class="btn-primary" href="products.html">
-        Explore Products
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="hero-actions reveal" data-delay="240">
+        <a class="btn-primary" href="products.html">
+          Explore Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn-ghost" href="#how">
+          How it works
+        </a>
+      </div>
     </div>
-    <div class="hero-visual hero-visual-brand">
+    <div class="hero-visual hero-visual-brand reveal" data-delay="100">
+      <div class="hero-orb"></div>
+      <div class="hero-orb hero-orb-2"></div>
       <img src="imgs/Logo.png" alt="VoltWise" class="brand-mark">
+      <div class="hero-stat">
+        <span class="hero-stat-dot"></span>
+        <div>
+          <strong>Live</strong>
+          <span>Monitoring 24/7</span>
+        </div>
+      </div>
+      <div class="hero-chip">AI-Optimized</div>
     </div>
   </div>
 </main>
 
+<!-- METRICS MARQUEE -->
+<section class="metrics">
+  <div class="metrics-track">
+    <div class="metrics-row">
+      <span class="m-item"><strong>32%</strong> avg. bill reduction</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>10K+</strong> homes powered smarter</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>4.9★</strong> customer rating</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>1ms</strong> response latency</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>End-to-end</strong> encryption</span>
+      <span class="m-dot"></span>
+    </div>
+    <div class="metrics-row" aria-hidden="true">
+      <span class="m-item"><strong>32%</strong> avg. bill reduction</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>10K+</strong> homes powered smarter</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>4.9★</strong> customer rating</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>1ms</strong> response latency</span>
+      <span class="m-dot"></span>
+      <span class="m-item"><strong>End-to-end</strong> encryption</span>
+      <span class="m-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="wrap section" id="how">
+  <div class="section-head reveal">
+    <h2 class="section-title">How <em>VoltWise</em> works</h2>
+    <p class="section-sub">Three simple steps from setup to savings — no rewiring, no complexity, no hidden fees.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h4>Install in minutes</h4>
+      <p>Snap the Core device onto your electrical panel. A certified technician handles the entire setup — included free with every order.</p>
+    </div>
+    <div class="step reveal" data-delay="120">
+      <div class="step-num">02</div>
+      <h4>Connect your home</h4>
+      <p>Pair with the VoltWise app over Wi-Fi or Bluetooth. The system auto-discovers high-draw appliances within the first 24 hours.</p>
+    </div>
+    <div class="step reveal" data-delay="240">
+      <div class="step-num">03</div>
+      <h4>Save automatically</h4>
+      <p>Sit back as our AI optimizes consumption in real time, sends smart alerts, and reports monthly savings straight to your inbox.</p>
+    </div>
+  </div>
+</section>
+
 <!-- SOLUTIONS -->
 <section class="wrap section section-tight">
-  <h3 class="solutions-head">Our <em>Solutions</em></h3>
+  <h3 class="solutions-head reveal">Our <em>Solutions</em></h3>
   <div class="solutions-grid">
-    <div class="sol-main">
+    <div class="sol-main reveal">
       <img src="imgs/Main 4.png" alt="VoltWise Core device">
       <div class="sol-card-overlay">
         <span class="tag">Flagship</span>
@@ -72,14 +142,14 @@
       </div>
     </div>
     <div class="sol-side">
-      <div class="sol-card">
+      <div class="sol-card reveal" data-delay="100">
         <div class="sol-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <h5>Millisecond Precision</h5>
         <p>Instantaneous feedback on your power draw ensures you never miss a sudden spike.</p>
       </div>
-      <div class="sol-card dark">
+      <div class="sol-card dark reveal" data-delay="200">
         <div class="sol-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
@@ -93,14 +163,19 @@
 <!-- CONTACT -->
 <section class="wrap section">
   <div class="contact-grid">
-    <div>
+    <div class="reveal">
       <h3 class="solutions-head">Connect with <em>Our Experts</em></h3>
       <p class="section-sub" style="text-align:left;max-width:42ch">
         Ready to optimize your home's energy? Our specialists are available to design a tailored
         VoltWise ecosystem for your specific needs.
       </p>
+      <ul class="contact-perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free consultation</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tailored installation plan</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reply within 24 hours</li>
+      </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate>
+    <form class="contact-form reveal" data-delay="120" id="contactForm" novalidate>
       <div class="row2">
         <div class="fg">
           <label class="fl" for="c_first">First Name</label>
@@ -124,6 +199,19 @@
   </div>
 </section>
 
+<!-- BRAND STATEMENT (closing) -->
+<section class="brand-statement">
+  <div class="bs-inner">
+    <p class="bs-eyebrow">VoltWise</p>
+    <h2 class="bs-line">Save energy.<br><em>Save money.</em><br>Live smarter.</h2>
+    <p class="bs-sub">A smarter home starts with knowing where your energy actually goes.</p>
+    <a class="btn-primary btn-on-dark" href="products.html" style="margin-top:32px">
+      Get Started
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="foot-inner">
@@ -141,6 +229,20 @@
 </footer>
 
 <script>
+  // Scroll-reveal observer
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const d = e.target.dataset.delay || 0;
+        e.target.style.transitionDelay = d + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Contact form
   document.getElementById('contactForm')?.addEventListener('submit', e => {
     e.preventDefault();
     const btn = e.target.querySelector('.btn-submit');
