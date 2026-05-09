@@ -1,19 +1,19 @@
-// ─── PRODUCT DATA ───
+﻿// â”€â”€â”€ PRODUCT DATA â”€â”€â”€
 var PRODUCT = {
   id: 'vw-sem-v1',
   name: 'VoltWise Smart Energy Meter',
   price: 999,
   color: 'Pearl White',
-  image: '../imgs/Mian.png',
+  image: 'imgs/Mian.png',
   images: [
-    '../imgs/Mian.png',
-    '../imgs/Main 2.jpeg',
-    '../imgs/Main 3.jpeg',
-    '../imgs/Main 4.png'
+    'imgs/Mian.png',
+    'imgs/Main 2.jpeg',
+    'imgs/Main 3.jpeg',
+    'imgs/Main 4.png'
   ]
 };
 
-// ─── GALLERY ───
+// â”€â”€â”€ GALLERY â”€â”€â”€
 (function() {
   var mainPhoto = document.getElementById('mainPhoto');
   var thumbsEl  = document.getElementById('thumbs');
@@ -35,7 +35,7 @@ var PRODUCT = {
   });
 })();
 
-// ─── COLOR SWATCHES ───
+// â”€â”€â”€ COLOR SWATCHES â”€â”€â”€
 (function() {
   var swatches = document.querySelectorAll('.color-swatch');
   var colorName = document.getElementById('colorName');
@@ -55,7 +55,7 @@ var PRODUCT = {
   });
 })();
 
-// ─── PRICE COUNT-UP ───
+// â”€â”€â”€ PRICE COUNT-UP â”€â”€â”€
 (function() {
   var priceEl = document.querySelector('.price');
   if (!priceEl) return;
@@ -75,7 +75,7 @@ var PRODUCT = {
 })();
 
 
-// ─── CART STATE ───
+// â”€â”€â”€ CART STATE â”€â”€â”€
 var cart = [];
 
 function getQty() {
@@ -106,7 +106,7 @@ function updateCartBtn() {
   }
 }
 
-// ─── QTY STEPPER ───
+// â”€â”€â”€ QTY STEPPER â”€â”€â”€
 document.getElementById('qtyMinus').addEventListener('click', function() {
   var inp = document.getElementById('qtyInput');
   var v = parseInt(inp.value) || 1;
@@ -117,7 +117,7 @@ document.getElementById('qtyPlus').addEventListener('click', function() {
   inp.value = (parseInt(inp.value) || 1) + 1;
 });
 
-// ─── ADD TO CART ───
+// â”€â”€â”€ ADD TO CART â”€â”€â”€
 document.getElementById('addBtn').addEventListener('click', function() {
   var qty = getQty();
   var itemId = PRODUCT.id + '-' + PRODUCT.color.toLowerCase().replace(/\s+/g,'-');
@@ -127,7 +127,7 @@ document.getElementById('addBtn').addEventListener('click', function() {
   } else {
     cart.push({
       id: itemId,
-      name: PRODUCT.name + ' — ' + PRODUCT.color,
+      name: PRODUCT.name + ' â€” ' + PRODUCT.color,
       price: PRODUCT.price,
       image: PRODUCT.image,
       qty: qty
@@ -148,7 +148,7 @@ document.getElementById('addBtn').addEventListener('click', function() {
   renderCart();
 });
 
-// ─── DRAWER ───
+// â”€â”€â”€ DRAWER â”€â”€â”€
 function openDrawer() {
   document.getElementById('overlay').classList.add('open');
   document.getElementById('drawer').classList.add('open');
@@ -182,7 +182,7 @@ function showPanel(name) {
   }
 }
 
-// ─── RENDER CART ───
+// â”€â”€â”€ RENDER CART â”€â”€â”€
 function renderCart() {
   var body = document.getElementById('cartItems');
   var foot = document.getElementById('cartFoot');
@@ -202,7 +202,7 @@ function renderCart() {
           '<div class="ci-name">' + item.name + '</div>',
           '<div class="ci-price">' + item.price + ' SAR each</div>',
           '<div class="ci-qty" style="margin-top:8px">',
-            '<button class="ci-qb" data-action="minus" data-id="' + item.id + '">−</button>',
+            '<button class="ci-qb" data-action="minus" data-id="' + item.id + '">âˆ’</button>',
             '<input class="ci-qn" type="number" value="' + item.qty + '" min="1" data-id="' + item.id + '" readonly>',
             '<button class="ci-qb" data-action="plus" data-id="' + item.id + '">+</button>',
           '</div>',
@@ -257,7 +257,7 @@ function renderCart() {
   foot.style.display = 'block';
 }
 
-// ─── CHECKOUT ───
+// â”€â”€â”€ CHECKOUT â”€â”€â”€
 document.getElementById('toCheckout').addEventListener('click', function() {
   showPanel('checkout');
 });
@@ -278,7 +278,7 @@ function renderCheckoutSummary() {
   var stdPrice = document.getElementById('stdPrice');
 
   itemsEl.innerHTML = cart.map(function(item) {
-    return '<div class="co-mi"><div class="co-mi-img"><img src="' + item.image + '" alt="' + item.name + '"></div><div class="co-mi-name">' + item.name + ' × ' + item.qty + '</div><div class="co-mi-p">' + (item.price*item.qty) + ' SAR</div></div>';
+    return '<div class="co-mi"><div class="co-mi-img"><img src="' + item.image + '" alt="' + item.name + '"></div><div class="co-mi-name">' + item.name + ' Ã— ' + item.qty + '</div><div class="co-mi-p">' + (item.price*item.qty) + ' SAR</div></div>';
   }).join('');
 
   var sub = cartTotal(), ship = getShipping(), total = sub + ship;
@@ -295,7 +295,7 @@ document.querySelectorAll('input[name="delivery"]').forEach(function(inp) {
   inp.addEventListener('change', renderCheckoutSummary);
 });
 
-// ─── FIELD VALIDATION ───
+// â”€â”€â”€ FIELD VALIDATION â”€â”€â”€
 var FIELDS = [
   { id:'f_first',   eid:'e_first',   type:'text' },
   { id:'f_last',    eid:'e_last',    type:'text' },
@@ -326,9 +326,9 @@ function validateAll() {
   return FIELDS.every(function(f){ return validateField(f); });
 }
 
-// ─── PLACE ORDER ───
+// â”€â”€â”€ PLACE ORDER â”€â”€â”€
 var payLabels = { mada:'Mada', applepay:'Apple Pay', tamara:'Tamara', tabby:'Tabby', cod:'Cash on Delivery' };
-var delLabels = { standard:'Standard (3–5 days)', express:'Express (1–2 days)', sameday:'Same-Day' };
+var delLabels = { standard:'Standard (3â€“5 days)', express:'Express (1â€“2 days)', sameday:'Same-Day' };
 
 document.getElementById('placeOrderBtn').addEventListener('click', function() {
   if (!validateAll()) {
@@ -369,7 +369,7 @@ document.getElementById('placeOrderBtn').addEventListener('click', function() {
 function renderConfirm(order) {
   var body = document.getElementById('confirmBody');
   var itemsHtml = order.items.map(function(item) {
-    return '<div class="cd-row"><span>' + item.name + ' × ' + item.qty + '</span><strong>' + (item.price*item.qty) + ' SAR</strong></div>';
+    return '<div class="cd-row"><span>' + item.name + ' Ã— ' + item.qty + '</span><strong>' + (item.price*item.qty) + ' SAR</strong></div>';
   }).join('');
 
   body.innerHTML = [
@@ -382,7 +382,7 @@ function renderConfirm(order) {
     '<h2>Order Confirmed!</h2>',
     '<p>Thank you, ' + order.name.split(' ')[0] + '!</p>',
     '<p>A confirmation was sent to <strong>' + order.email + '</strong></p>',
-    '<p class="order-num">Order <strong>' + order.num + '</strong> · ' + order.date + '</p>',
+    '<p class="order-num">Order <strong>' + order.num + '</strong> Â· ' + order.date + '</p>',
     '<div class="conf-details">',
       '<h4>Items Ordered</h4>',
       itemsHtml,
@@ -403,7 +403,7 @@ document.getElementById('shopAgainBtn').addEventListener('click', function() {
   window.scrollTo({ top:0, behavior:'smooth' });
 });
 
-// ─── TABS ───
+// â”€â”€â”€ TABS â”€â”€â”€
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('on', t.dataset.tab===name); });
   document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.toggle('on', p.id==='tab-'+name); });
@@ -414,7 +414,7 @@ document.querySelectorAll('.tab').forEach(function(btn) {
   btn.addEventListener('click', function(){ switchTab(btn.dataset.tab); });
 });
 
-// ─── TOAST ───
+// â”€â”€â”€ TOAST â”€â”€â”€
 function showToast(msg) {
   var wrap = document.getElementById('toastWrap');
   var t = document.createElement('div');
