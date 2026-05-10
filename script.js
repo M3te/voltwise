@@ -202,7 +202,7 @@ function renderCart() {
           '<div class="ci-name">' + item.name + '</div>',
           '<div class="ci-price">' + item.price + ' SAR each</div>',
           '<div class="ci-qty" style="margin-top:8px">',
-            '<button class="ci-qb" data-action="minus" data-id="' + item.id + '">âˆ’</button>',
+            '<button class="ci-qb" data-action="minus" data-id="' + item.id + '">−</button>',
             '<input class="ci-qn" type="number" value="' + item.qty + '" min="1" data-id="' + item.id + '" readonly>',
             '<button class="ci-qb" data-action="plus" data-id="' + item.id + '">+</button>',
           '</div>',
