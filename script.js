@@ -128,7 +128,7 @@ document.getElementById('addBtn').addEventListener('click', function() {
   } else {
     cart.push({
       id: itemId,
-      name: PRODUCT.name + ' â€” ' + PRODUCT.color,
+      name: PRODUCT.name + ' — ' + PRODUCT.color,
       price: PRODUCT.price,
       image: PRODUCT.image,
       qty: qty
@@ -294,7 +294,7 @@ function renderCheckoutSummary() {
   var stdPrice = document.getElementById('stdPrice');
 
   itemsEl.innerHTML = cart.map(function(item) {
-    return '<div class="co-mi"><div class="co-mi-img"><img src="' + item.image + '" alt="' + item.name + '"></div><div class="co-mi-name">' + item.name + ' Ã— ' + item.qty + '</div><div class="co-mi-p">' + (item.price*item.qty) + ' SAR</div></div>';
+    return '<div class="co-mi"><div class="co-mi-img"><img src="' + item.image + '" alt="' + item.name + '"></div><div class="co-mi-name">' + item.name + ' × ' + item.qty + '</div><div class="co-mi-p">' + (item.price*item.qty) + ' SAR</div></div>';
   }).join('');
 
   var sub = cartTotal(), ship = getShipping(), total = sub + ship;
@@ -344,7 +344,7 @@ function validateAll() {
 
 // â”€â”€â”€ PLACE ORDER â”€â”€â”€
 var payLabels = { mada:'Mada', applepay:'Apple Pay', tamara:'Tamara', tabby:'Tabby', cod:'Cash on Delivery' };
-var delLabels = { standard:'Standard (3â€“5 days)', express:'Express (1â€“2 days)', sameday:'Same-Day' };
+var delLabels = { standard:'Standard (3–5 days)', express:'Express (1–2 days)', sameday:'Same-Day' };
 
 document.getElementById('placeOrderBtn').addEventListener('click', function() {
   if (!validateAll()) {
@@ -385,7 +385,7 @@ document.getElementById('placeOrderBtn').addEventListener('click', function() {
 function renderConfirm(order) {
   var body = document.getElementById('confirmBody');
   var itemsHtml = order.items.map(function(item) {
-    return '<div class="cd-row"><span>' + item.name + ' Ã— ' + item.qty + '</span><strong>' + (item.price*item.qty) + ' SAR</strong></div>';
+    return '<div class="cd-row"><span>' + item.name + ' × ' + item.qty + '</span><strong>' + (item.price*item.qty) + ' SAR</strong></div>';
   }).join('');
 
   body.innerHTML = [
@@ -398,7 +398,7 @@ function renderConfirm(order) {
     '<h2>Order Confirmed!</h2>',
     '<p>Thank you, ' + order.name.split(' ')[0] + '!</p>',
     '<p>A confirmation was sent to <strong>' + order.email + '</strong></p>',
-    '<p class="order-num">Order <strong>' + order.num + '</strong> Â· ' + order.date + '</p>',
+    '<p class="order-num">Order <strong>' + order.num + '</strong> · ' + order.date + '</p>',
     '<div class="conf-details">',
       '<h4>Items Ordered</h4>',
       itemsHtml,
