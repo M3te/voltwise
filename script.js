@@ -135,7 +135,6 @@ document.getElementById('addBtn').addEventListener('click', function() {
     });
   }
   updateCartBtn();
-  showToast(PRODUCT.name + ' (' + PRODUCT.color + ') added to cart');
 
   var btn = document.getElementById('addBtn');
   btn.classList.add('added', 'pulse');
