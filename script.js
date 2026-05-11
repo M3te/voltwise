@@ -241,18 +241,14 @@ function renderCart() {
   });
 
   var subtotal = cartTotal();
-  var shipping = subtotal >= 999 ? 0 : 50;
   var fastChk = document.getElementById('fastDelivChk');
   var fastFee = (fastChk && fastChk.checked) ? 30 : 0;
-  var total = subtotal + shipping + fastFee;
+  var total = subtotal + fastFee;
 
-  var freeNote = subtotal < 999
-    ? '<div class="free-ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Free shipping included with your order!</div>'
-    : '<div class="free-ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>Free shipping + installation included!</div>';
+  var freeNote = '<div class="free-ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>Free shipping + installation included!</div>';
 
   sum.innerHTML = freeNote + [
     '<div class="sum-row"><span>Subtotal</span><span>' + subtotal + ' SAR</span></div>',
-    '<div class="sum-row"><span>Shipping</span><span style="color:' + (shipping===0?'var(--success)':'inherit') + '">' + (shipping===0?'FREE':shipping+' SAR') + '</span></div>',
     (fastFee ? '<div class="sum-row"><span>Fast Delivery</span><span>+30 SAR</span></div>' : ''),
     '<div class="sum-row total"><span>Total</span><span>' + total + ' SAR</span></div>'
   ].join('');
@@ -272,8 +268,6 @@ function getShipping() {
   var del = document.querySelector('input[name="delivery"]:checked');
   if (del && del.value === 'express') return 30;
   if (del && del.value === 'sameday') return 99;
-  var fastChk = document.getElementById('fastDelivChk');
-  if (fastChk && fastChk.checked) return 30;
   return 0;
 }
 
@@ -301,7 +295,7 @@ function renderCheckoutSummary() {
 
   totalsEl.innerHTML = [
     '<div class="co-tr"><span>Subtotal</span><span>' + sub + ' SAR</span></div>',
-    '<div class="co-tr"><span>Shipping</span><span style="color:' + (ship===0?'var(--success)':'inherit') + '">' + (ship===0?'FREE':ship+' SAR') + '</span></div>',
+    (ship > 0 ? '<div class="co-tr"><span>Delivery upgrade</span><span>+' + ship + ' SAR</span></div>' : ''),
     '<div class="co-tr total"><span>Total</span><span>' + total + ' SAR</span></div>'
   ].join('');
 }
@@ -401,7 +395,7 @@ function renderConfirm(order) {
     '<div class="conf-details">',
       '<h4>Items Ordered</h4>',
       itemsHtml,
-      '<div class="cd-row" style="margin-top:8px"><span>Shipping (' + (delLabels[order.delivery]||order.delivery) + ')</span><strong>' + (order.shipping===0?'FREE':order.shipping+' SAR') + '</strong></div>',
+      '<div class="cd-row" style="margin-top:8px"><span>Delivery (' + (delLabels[order.delivery]||order.delivery) + ')</span><strong>' + (order.shipping===0?'FREE':order.shipping+' SAR') + '</strong></div>',
       '<div class="cd-row"><span><strong>Total Paid</strong></span><strong>' + order.total + ' SAR</strong></div>',
     '</div>',
     '<div class="conf-details">',

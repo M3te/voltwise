@@ -1048,6 +1048,44 @@ ul { list-style: none; }
 }
 .btn-again:hover { background:var(--forest); color:var(--lime); }
 
+/* Confirmation panel — responsive */
+@media (max-width: 720px) {
+  .confirm-body { padding: 36px 24px; }
+  .check-anim { width: 72px; height: 72px; margin-bottom: 20px; }
+  .confirm-body h2 { font-size: 1.55rem; }
+  .confirm-body p { font-size: .88rem; }
+  .order-num { margin-bottom: 22px; }
+  .conf-details { padding: 18px 18px; margin-bottom: 18px; border-radius: var(--r-lg); }
+  .conf-details h4 { font-size: .68rem; margin-bottom: 10px; }
+  .cd-row { font-size: .82rem; gap: 10px; }
+  .conf-foot { padding: 20px 24px; }
+}
+
+@media (max-width: 480px) {
+  .confirm-body { padding: 28px 18px; }
+  .check-anim { width: 64px; height: 64px; margin-bottom: 16px; }
+  .confirm-body h2 { font-size: 1.35rem; }
+  .confirm-body p { font-size: .85rem; word-break: break-word; }
+  .order-num { font-size: .78rem; margin-bottom: 18px; }
+  .conf-details { padding: 16px 14px; margin-bottom: 14px; }
+  .cd-row {
+    font-size: .8rem; gap: 8px;
+    /* Allow the label + value to wrap on very narrow screens */
+    flex-wrap: wrap;
+  }
+  .cd-row > span { flex: 1 1 55%; min-width: 0; word-break: break-word; }
+  .cd-row strong { flex: 0 0 auto; max-width: 100%; word-break: break-word; }
+  .conf-foot { padding: 16px 18px; }
+  .btn-again { height: 46px; font-size: .85rem; }
+}
+
+@media (max-width: 360px) {
+  .confirm-body { padding: 24px 14px; }
+  .confirm-body h2 { font-size: 1.2rem; }
+  .conf-details { padding: 14px 12px; }
+  .cd-row { font-size: .76rem; }
+}
+
 /* ─── TOAST ─── */
 .toast-wrap { position:fixed; bottom:96px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:10px; pointer-events:none; }
 .toast {
