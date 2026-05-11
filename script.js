@@ -176,10 +176,9 @@ function showPanel(name) {
   document.getElementById('panelCart').style.display     = name === 'cart'     ? 'flex'  : 'none';
   document.getElementById('panelCheckout').style.display = name === 'checkout' ? 'flex'  : 'none';
   document.getElementById('panelConfirm').style.display  = name === 'confirm'  ? 'flex'  : 'none';
-  if (name === 'checkout') {
-    document.getElementById('panelCheckout').classList.add('on');
-    renderCheckoutSummary();
-  }
+  document.getElementById('panelCheckout').classList.toggle('on', name === 'checkout');
+  document.getElementById('panelConfirm').classList.toggle('on', name === 'confirm');
+  if (name === 'checkout') renderCheckoutSummary();
 }
 
 // â”€â”€â”€ RENDER CART â”€â”€â”€
